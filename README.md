@@ -2,9 +2,8 @@
 
 ## How to run 
 npm install
-
+yarn
 yarn dev
-
 access http://localhost:3000/
 
 ## Getting started

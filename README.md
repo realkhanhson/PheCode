@@ -1,13 +1,16 @@
 # PheCode
 
 ## How to run 
-npm install
+```sh
+# Get yarn if you don't have it already
+npm i -g yarn
 
+# Install, then start dev server
 yarn
-
 yarn dev
 
-access http://localhost:3000/
+# then go to localhost:3000
+```
 
 ## Getting started
 All source codes related to the blog are under [components](/src/components) and [pages](/src/pages) directory.

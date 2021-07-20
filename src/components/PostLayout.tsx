@@ -1,0 +1,131 @@
+import React from "react";
+import { Typography, Paper } from "@material-ui/core";
+import styles from "../../public/styles/content.module.css";
+import Author from "./Author";
+import Date from "./Date";
+import Layout from "./Layout";
+import BasicMeta from "./meta/BasicMeta";
+import JsonLdMeta from "./meta/JsonLdMeta";
+import OpenGraphMeta from "./meta/OpenGraphMeta";
+import TwitterCardMeta from "./meta/TwitterCardMeta";
+import TagButton from "./TagButton";
+import { getAuthor } from "../lib/authors";
+import { getTag } from "../lib/tags";
+
+type Props = {
+  title: string;
+  date: Date;
+  slug: string;
+  tags: string[];
+  author: string;
+  description?: string;
+  image: string;
+  children: React.ReactNode;
+};
+export default function PostLayout({
+  title,
+  date,
+  slug,
+  author,
+  tags,
+  description = "",
+  image,
+  children,
+}: Props) {
+  const keywords = tags.map((it) => getTag(it).name);
+  const authorName = getAuthor(author).name;
+  return (
+    <Layout>
+      <BasicMeta
+        url={`/${slug}`}
+        title={title}
+        keywords={keywords}
+        description={description}
+      />
+      <TwitterCardMeta
+        url={`/${slug}`}
+        title={title}
+        description={description}
+      />
+      <OpenGraphMeta
+        url={`/${slug}`}
+        title={title}
+        description={description}
+        image={image}
+      />
+      <JsonLdMeta
+        url={`/${slug}`}
+        title={title}
+        keywords={keywords}
+        date={date}
+        author={authorName}
+        description={description}
+      />
+      <Paper elevation={0}>
+        <article className="container">
+          <header>
+            <Typography gutterBottom variant="h3" component="h1">
+              <br />
+              {title}
+            </Typography>
+            <div className={"metadata"}>
+              <ul className={"tag-list"}>
+                {tags.map((it, i) => (
+                  <li key={i}>
+                    <TagButton tag={getTag(it)} />
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <Date date={date} />
+              </div>
+              <div>
+                <Author author={getAuthor(author)} />
+              </div>
+            </div>
+          </header>
+          <div className={styles.content}>{children}</div>
+          <br />
+        </article>
+      </Paper>
+      <style jsx>
+        {`
+          .container {
+            max-width: 40rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            z-index: 0;
+          }
+          .metadata div {
+            display: inline-block;
+            margin-right: 0.5rem;
+          }
+          article {
+            flex: 1 0 auto;
+          }
+          h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.25rem;
+          }
+          .tag-list {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 5px;
+          }
+          .tag-list li {
+            display: inline-block;
+            padding: 0 7px 7px 0;
+          }
+          @media (min-width: 769px) {
+            .container {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        `}
+      </style>
+    </Layout>
+  );
+}

@@ -30,7 +30,6 @@ export default function Layout({ children }: Props) {
         {`
           main {
             padding: 2rem 0 1rem 0;
-            display: flex;
           }
           .social-list {
             margin-top: 1rem;

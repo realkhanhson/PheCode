@@ -11,6 +11,7 @@ import TwitterCardMeta from "./meta/TwitterCardMeta";
 import TagButton from "./TagButton";
 import { getAuthor } from "../lib/authors";
 import { getTag } from "../lib/tags";
+import Comment from "./Comment";
 
 type Props = {
   title: string;
@@ -88,6 +89,7 @@ export default function PostLayout({
           <br />
         </article>
       </Paper>
+      <Comment />
       <style jsx>
         {`
           .container {

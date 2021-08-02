@@ -1,12 +1,12 @@
 authors:
-  - slug: DKS
-    name: Đặng Khánh Sơn
-    introduction:
-  - slug: BVT
-    name: Bùi Văn Thiện
-  - slug: HDL
-    name: Huỳnh Đức Lê
-  - slug: HPNQ
-    name: Hồ Phạm Nam Quốc
-  - slug: DTV
-    name: Đinh Thành Việt
+    - slug: DKS
+      name: Đặng Khánh Sơn
+      introduction:
+    - slug: BVT
+      name: Bùi Văn Thiện
+    - slug: HDL
+      name: Huỳnh Đức Lê
+    - slug: HPNQ
+      name: Hồ Phạm Nam Quốc
+    - slug: DTV
+      name: Đinh Thành Việt

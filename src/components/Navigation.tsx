@@ -5,40 +5,32 @@ import Burger from "./Burger";
 import { listTags } from "../lib/tags";
 
 export default function Navigation() {
-  const router = useRouter();
-  const tags = listTags();
-  const [active, setActive] = useState(false);
-  return (
-    <>
-      <Burger active={active} onClick={() => setActive(!active)} />
-      <div className={active ? "active" : ""}>
-        <ul>
-          <li>
-            <Link href="/">
-              <a className={router.pathname === "/" ? "active" : null}>
-                All
-              </a>
-            </Link>
-          </li>
-          {tags.map((tag, i) => (
-            <li key={i}>
-              <Link href={"/tags/[[...slug]]"} as={`/tags/${tag.slug}`}>
-                <a
-                  className={
-                    router.pathname.startsWith(`/tags/${tag.slug}`)
-                      ? "active"
-                      : null
-                  }
-                >
-                  {tag.name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <style jsx>
-        {`
+	const router = useRouter();
+	const tags = listTags();
+	const [active, setActive] = useState(false);
+	return (
+		<>
+			<Burger active={active} onClick={() => setActive(!active)} />
+			<div className={active ? "active" : ""}>
+				<ul>
+					<li>
+						<Link href="/">
+							<a className={router.pathname === "/" ? "active" : null}>All</a>
+						</Link>
+					</li>
+					{tags.map((tag, i) => (
+						<li key={i}>
+							<Link href={"/tags/[[...slug]]"} as={`/tags/${tag.slug}`}>
+								<a className={router.pathname.startsWith(`/tags/${tag.slug}`) ? "active" : null}>
+									{tag.name}
+								</a>
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+			<style jsx>
+				{`
           .container{
             display: flex:
             margin-left: auto;
@@ -88,7 +80,7 @@ export default function Navigation() {
             }
           }
         `}
-      </style>
-    </>
-  );
+			</style>
+		</>
+	);
 }

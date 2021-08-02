@@ -1,13 +1,13 @@
 tags:
-  - slug: nextjs
-    name: Nextjs
-  - slug: reactjs
-    name: Reactjs
-  - slug: mui
-    name: Material-UI
-  - slug: netlify
-    name: Netlify
-  - slug: tailwindcss 
-    name: Tailwindcss
-  - slug: vercel
-    name: Vercel  
+    - slug: nextjs
+      name: Nextjs
+    - slug: reactjs
+      name: Reactjs
+    - slug: mui
+      name: Material-UI
+    - slug: netlify
+      name: Netlify
+    - slug: tailwindcss
+      name: Tailwindcss
+    - slug: vercel
+      name: Vercel

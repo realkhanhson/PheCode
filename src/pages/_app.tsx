@@ -14,19 +14,19 @@ const cache = createCache({ key: "css" });
 cache.compat = true;
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <CacheProvider value={cache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        {/* <CssBaseline /> */}
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
-  );
+	return (
+		<CacheProvider value={cache}>
+			<Head>
+				<meta name="viewport" content="initial-scale=1, width=device-width" />
+			</Head>
+			<ThemeProvider theme={theme}>
+				{/* <CssBaseline /> */}
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</CacheProvider>
+	);
 }
 App.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
+	Component: PropTypes.elementType.isRequired,
+	pageProps: PropTypes.object.isRequired,
 };

@@ -49,7 +49,7 @@ const theme = createMuiTheme(
 			},
 			MuiPaper: {
 				elevation0: {
-					width: 800,
+					maxWidth: 800,
 					flexDirection: "column",
 					justifyContent: "space-between",
 					borderRadius: "25px",

@@ -13,6 +13,7 @@ export type PostContent = {
 	readonly fullPath: string;
 	readonly image: string;
 	readonly author: string;
+	readonly content?: string;
 };
 
 let postCache: PostContent[];

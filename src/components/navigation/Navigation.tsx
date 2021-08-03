@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Burger from "./Burger";
-import { listTags } from "../lib/tags";
+import { listTags } from "../../lib/tags";
 
 export default function Navigation() {
 	const router = useRouter();
@@ -10,7 +9,6 @@ export default function Navigation() {
 	const [active, setActive] = useState(false);
 	return (
 		<>
-			<Burger active={active} onClick={() => setActive(!active)} />
 			<div className={active ? "active" : ""}>
 				<ul>
 					<li>

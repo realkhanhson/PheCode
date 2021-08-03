@@ -12,7 +12,18 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"jsx": "preserve"
+		"jsx": "preserve",
+
+		// Path remapping
+		"baseUrl": ".",
+		"paths": {
+			"@content/*": ["content/*"],
+			"@meta/*": ["meta/*"],
+			"@public/*": ["public/*"],
+			"@components/*": ["src/components/*"],
+			"@lib/*": ["src/lib/*"],
+			"@pages/*": ["src/pages/*"],
+		}
 	},
 	"exclude": ["node_modules"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

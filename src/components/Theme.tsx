@@ -4,7 +4,7 @@ import { viVN } from "@material-ui/core/locale";
 const theme = createMuiTheme(
 	{
 		typography: {
-			fontFamily: "'Merriweather', serif",
+			fontFamily: "'Inter', sans",
 		},
 		palette: {
 			primary: {

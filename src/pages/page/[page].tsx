@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
-import PostList from "../../components/PostList";
+import PostList from "../../components/post/PostList";
 import config from "../../lib/config";
 import { countPosts, listPostContent, PostContent } from "../../lib/posts";
 import { listTags, TagContent } from "../../lib/tags";

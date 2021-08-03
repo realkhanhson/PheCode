@@ -1,8 +1,8 @@
 import React from "react";
-import { PostContent } from "../lib/posts";
-import { TagContent } from "../lib/tags";
+import { PostContent } from "../../lib/posts";
+import { TagContent } from "../../lib/tags";
 import PostItem from "./PostItem";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import { Container, Grid } from "@material-ui/core";
 
 type Props = {

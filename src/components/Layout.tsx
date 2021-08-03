@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Header";
-import Navigation from "./Navigation";
-import Copyright from "./Copyright";
-import { SocialList } from "./SocialList";
+import Header from "./navigation/Header";
+import Navigation from "./navigation/Navigation";
+import Copyright from "./navigation/Copyright";
+import { SocialList } from "./navigation/SocialList";
 import { Container } from "@material-ui/core";
-import SearchAppBar from "./SearchAppBar";
+import SearchAppBar from "./navigation/SearchAppBar";
 import Link from "@material-ui/core/Link";
 
 type Props = {
@@ -16,8 +16,6 @@ export default function Layout({ children }: Props) {
 			<SearchAppBar />
 			<Container maxWidth="lg">
 				<Header />
-
-				<Navigation />
 			</Container>
 			<main>{children}</main>
 			<footer>

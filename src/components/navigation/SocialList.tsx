@@ -1,5 +1,5 @@
 import React from "react";
-import config from "../lib/config";
+import config from "../../lib/config";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";

@@ -1,12 +1,12 @@
 import React from "react";
 import { Typography, Paper } from "@material-ui/core";
-import styles from "../../public/styles/content.module.css";
+import styles from "@public/styles/content.module.css";
 import Author from "./Author";
 import Date from "./Date";
-import Layout from "./Layout";
+import Layout from "../Layout";
 import TagButton from "./TagButton";
-import { getAuthor } from "../lib/authors";
-import { getTag } from "../lib/tags";
+import { getAuthor } from "../../lib/authors";
+import { getTag } from "../../lib/tags";
 import Comment from "./Comment";
 
 type Props = {

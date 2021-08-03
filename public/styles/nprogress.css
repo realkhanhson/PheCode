@@ -12,12 +12,12 @@
 
 #nprogress .bar {
 	background: var(--loading-bar-color);
-	
+
 	position: fixed;
 	z-index: 1031;
 	top: 0;
 	left: 0;
-	
+
 	width: 100%;
 	height: var(--loading-bar-thickness);
 }
@@ -30,8 +30,8 @@
 	width: 100px;
 	height: 100%;
 	box-shadow: 0 0 10px var(--loading-bar-color), 0 0 5px var(--loading-bar-color);
-	opacity: 1.0;
-	
+	opacity: 1;
+
 	-webkit-transform: rotate(3deg) translate(0px, -4px);
 	-ms-transform: rotate(3deg) translate(0px, -4px);
 	transform: rotate(3deg) translate(0px, -4px);
@@ -48,7 +48,8 @@
 }
 
 /* We don't want an indeterminate spinner here */
-#nprogress .spinner, #nprogress .spinner-icon {
+#nprogress .spinner,
+#nprogress .spinner-icon {
 	display: none;
 }
 

@@ -19,7 +19,7 @@ export default function Page({ posts, tags, pagination, page }: Props) {
 	const title = page.toString();
 	return (
 		<Layout>
-			<PostList posts={posts} tags={tags} pagination={pagination} />
+			<PostList posts={posts} title={"All Posts"} tags={tags} pagination={pagination} />
 		</Layout>
 	);
 }

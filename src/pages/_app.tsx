@@ -4,7 +4,6 @@ import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../components/Theme";
 import "normalize.css";
 import { AppProps } from "next/app";

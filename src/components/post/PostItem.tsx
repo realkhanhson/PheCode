@@ -4,7 +4,6 @@ import Date from "./meta/Date";
 import { parseISO } from "date-fns";
 import { getAuthor } from "../../lib/authors";
 import Author from "./meta/Author";
-import Image from "material-ui-image";
 import { Card, CardContent, CardMedia, CardActions, Typography, CardActionArea } from "@material-ui/core";
 
 import InfoBar from "@components/post/meta/InfoBar";
@@ -23,9 +22,15 @@ export default function PostItem({ post }: Props) {
 			backgroundColor: "#ffffff",
 			padding: "32px",
 			borderRadius: "16px",
+			cursor: "pointer",
+			"&:hover": {
+				boxShadow: "0 6px 20px 1px rgba(0, 0, 0, 0.12)",
+			},
 		},
+
 		title: {
 			fontWeight: 500,
+			height: "64px",
 			fontSize: "32px",
 		},
 		infobar: {},

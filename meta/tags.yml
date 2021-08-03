@@ -11,3 +11,7 @@ tags:
       name: Tailwindcss
     - slug: vercel
       name: Vercel
+    - slug: javascript
+      name: JavaScript
+    - slug: python
+      name: Python

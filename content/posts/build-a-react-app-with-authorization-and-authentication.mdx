@@ -1,0 +1,25 @@
+---
+slug: build-a-react-app-with-authorization-and-authentication
+title: "Build a React App with Authorization and Authentication"
+date: 2021-08-03
+author: BVT
+image: https://i.imgur.com/pKfScmB.png
+tags:
+    - reactjs
+---
+In this tutorial, we'll be talking about authorization and how to implement it with AWS Amplify's DataStore. First, let's get on the same page with what authorization and authentication are:
+
+Authorization - Different users have different actions that they can perform. Authentication - making sure someone is who they say they are, for example through making them enter a password.
+
+We'll be building a blogging platform with a frontend and backend authentication system with admin roles and certain actions restricted to content's creators. We'll first have blogs -- similar to Medium publications or Blogger blogs. Only admin users will be able to create new blogs, though anybody can view a list of the blogs. Blogs will have posts within them that anyone can view, but only the person who created the blog will be able to update or delete blogs.
+
+## Create a Blog using the Admin UI
+
+Now, go ahead and deploy your data models by following the guided process the Admin UI offers. Once it deploys, go into the Admin UI and create a few blogs and a few posts.
+
+Then, we'll add authentication. In the Admin UI, click on "Authentication" tab and then configure auth. I deployed with the default options.
+
+Once your authentication is deployed, add in authorization rules. First, click on the Blog model and on the right-hand panel, configure authorization. Uncheck create, update, and delete from under "Anyone authenticated with API Key can..." -- we'll allow anyone to view a blog but only admins to mutate them. Then, click the add an authorization rule dropdown. From here click "Create new" under "Specific Group", and name your group "admin". Allow admin users to perform all actions.
+
+
+

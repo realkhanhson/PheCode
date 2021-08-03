@@ -15,14 +15,15 @@ type Props = {
 		current: number;
 		pages: number;
 	};
+	title: string;
 };
 
-export default function PostList({ posts, tags, pagination }: Props) {
+export default function PostList({ posts, tags, pagination, title }: Props) {
 	return (
 		<>
 			<Container maxWidth="lg">
 				<HomeSection>
-					<LinkedHeader title={"For You"} href={"#"} />
+					<LinkedHeader title={title} href={"#"} />
 					<Grid container alignItems="stretch" spacing={4}>
 						{posts.map((it, i) => (
 							<Grid item key={i} xs={12} md={6} lg={6}>

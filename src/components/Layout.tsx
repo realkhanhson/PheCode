@@ -1,11 +1,8 @@
 import React from "react";
 import Header from "./navigation/Header";
-import Navigation from "./navigation/Navigation";
 import Copyright from "./navigation/Copyright";
 import { SocialList } from "./navigation/SocialList";
 import { Container } from "@material-ui/core";
-import SearchAppBar from "./navigation/SearchAppBar";
-import Link from "@material-ui/core/Link";
 
 import AppBar2 from "@components/navigation/AppBar2";
 

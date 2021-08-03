@@ -39,12 +39,8 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 									</li>
 								))}
 							</ul>
-							<div>
-								<Date date={date} />
-							</div>
-							<div>
-								<Author author={getAuthor(author)} />
-							</div>
+							<Author author={getAuthor(author)} />
+							<Date date={date} />
 						</div>
 					</header>
 					<div className={styles.content}>{children}</div>

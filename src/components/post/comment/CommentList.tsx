@@ -1,5 +1,3 @@
-import { Typography, Paper } from "@material-ui/core";
-
 import Comment from "@components/post/comment/Comment";
 import AddCommentBox from "@components/post/comment/AddCommentBox";
 
@@ -11,11 +9,12 @@ export default function CommentList() {
 			gap: "24px",
 			padding: "32px",
 			// maxWidth: "calc(0.6 * 1920px)",
-			maxWidth: "720px",
+			maxWidth: "736px",
 			margin: "24px auto 0",
 			backgroundColor: "#ffffff",
-			border: "1px solid #c0c0c0",
-			borderRadius: "16px",
+			boxShadow: "0 6px 20px 1px rgba(0, 0, 0, 0.12)",
+
+			borderRadius: "25px",
 		},
 		textbtnShowMore: {
 			color: "#a0a0a0",
@@ -28,6 +27,7 @@ export default function CommentList() {
 
 			<Comment
 				author="Khanh Son"
+				image="KS"
 				content={`
 					This is a false fact. Even when you enjoy it, sometimes it can get frustrating. Some people have
 					trouble focusing. And it has nothing to do with "what they enjoy". Sometimes when programming
@@ -37,6 +37,7 @@ export default function CommentList() {
 
 			<Comment
 				author="Thien Bui"
+				image="TB"
 				content={`
 					You still wanna make sure if you're unfocused by laziness or because you hate it
 				`}
@@ -44,6 +45,7 @@ export default function CommentList() {
 
 			<Comment
 				author="Nam Quoc"
+				image="NQ"
 				content={`
 					Thank you so much for sharing all this. I'm pretty sure that, I'll gain efficiency by following
 					the promodoro technique. I used to stay watching videos and taking note for about 3h every

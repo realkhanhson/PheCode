@@ -1,0 +1,24 @@
+---
+slug: create-a-wordcloud-of-news-headlines-in-python
+title: "Create a wordcloud of news headlines in python!"
+date: 2021-08-03
+author: HPNQ
+image: https://i.imgur.com/oNxouG0.png
+tags:
+    - python
+---
+
+Today, I'll be showing you a simple way to make a wordcloud of news headlines in python!
+
+If you haven't read this tutorial explaining how to scrape news headlines in python, make sure you do.
+In summary, here's the code for scraping news headlines in python:
+
+To create a wordcloud out of these news headlines, first import these 2 libraries beside the libraries needed to scrape our news source:
+
+First create a wordcloud(well, more like a box in this case) sized 500 by 500.
+
+Next, our wordcloud will be created using "plt.imshow()" (interpolation='bilinear' just makes the words in the wordcloud easier to read).
+
+plt.axis("off") and plt.margins(x=0, y=0) make sure our wordcloud isn't displayed as a graph.
+
+_Finally, our wordcloud is displayed using "plt.show()".

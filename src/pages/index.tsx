@@ -14,11 +14,11 @@ type Props = {
 	};
 };
 export default function Index({ posts, tags, pagination }: Props) {
-	const url = "/";
-	const title = "";
 	return (
 		<Layout>
-			<PostList posts={posts} tags={tags} pagination={pagination} />
+			<PostList posts={posts.slice(0, 1)} title={"Continue Reading"} tags={tags} pagination={pagination} />
+			<PostList posts={posts.slice(1, 3)} title={"For You"} tags={tags} pagination={pagination} />
+			<PostList posts={posts.slice(0)} title={"Trending on PheCode"} tags={tags} pagination={pagination} />
 		</Layout>
 	);
 }

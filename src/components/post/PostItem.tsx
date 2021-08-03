@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { PostContent } from "../../lib/posts";
-import Date from "./Date";
+import Date from "./meta/Date";
 import { parseISO } from "date-fns";
 import { getAuthor } from "../../lib/authors";
-import Author from "./Author";
+import Author from "./meta/Author";
 import Image from "material-ui-image";
 import { Card, CardContent, CardMedia, CardActions, Typography, CardActionArea } from "@material-ui/core";
 
-import InfoBar from "@components/post/InfoBar";
+import InfoBar from "@components/post/meta/InfoBar";
 
 type Props = {
 	post: PostContent;

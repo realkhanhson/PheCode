@@ -13,7 +13,7 @@ export default function CommentList() {
 			// maxWidth: "calc(0.6 * 1920px)",
 			maxWidth: "720px",
 			margin: "24px auto 0",
-			backgroundColor: "#fafafa",
+			backgroundColor: "#ffffff",
 			border: "1px solid #c0c0c0",
 			borderRadius: "16px",
 		},

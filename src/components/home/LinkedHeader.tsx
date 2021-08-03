@@ -12,6 +12,7 @@ const LinkedHeader = ({ title, href }) => {
 			alignItems: "center",
 			gap: "16px",
 			color: "#ff9900",
+			cursor: "pointer",
 		},
 		link: {
 			fontSize: styleVars.textSize,
@@ -25,12 +26,12 @@ const LinkedHeader = ({ title, href }) => {
 	};
 
 	return (
-		<div style={styles.container}>
-			<Link href={href}>
+		<Link href={href}>
+			<div style={styles.container}>
 				<a style={styles.link}>{title}</a>
-			</Link>
-			<ArrowForwardIosIcon style={styles.icon} />
-		</div>
+				<ArrowForwardIosIcon style={styles.icon} />
+			</div>
+		</Link>
 	);
 };
 

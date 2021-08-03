@@ -20,7 +20,7 @@ export default function PostItem({ post }: Props) {
 			flexFlow: "column",
 			gap: "16px",
 			border: "1px solid #c0c0c0",
-			backgroundColor: "#fafafa",
+			backgroundColor: "#ffffff",
 			padding: "32px",
 			borderRadius: "16px",
 		},

@@ -76,7 +76,7 @@ const AppBar2 = () => {
 	};
 
 	return (
-		<AppBar position="static" style={styles.appBarSpecifics}>
+		<AppBar position="sticky" style={styles.appBarSpecifics}>
 			<div style={styles.container}>
 				<div style={styles.tabs}>
 					<Link href="/">

@@ -8,7 +8,16 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../components/Theme";
 import "normalize.css";
 import { AppProps } from "next/app";
-import "../../public/styles/global.css";
+import "@public/styles/global.css";
+
+import Router from 'next/router';
+import NProgress from 'nprogress';
+import '@public/styles/nprogress.css';
+
+NProgress.configure({ showSpinner: false });
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 const cache = createCache({ key: "css" });
 cache.compat = true;

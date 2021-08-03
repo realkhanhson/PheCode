@@ -20,6 +20,7 @@ const AppBar2 = () => {
 		appBarSpecifics: {
 			boxShadow: "none",
 			color: "#000000",
+			zIndex: 1030, // Magic number: exactly 1 less than the default z-index for nprogress
 		},
 
 		container: {

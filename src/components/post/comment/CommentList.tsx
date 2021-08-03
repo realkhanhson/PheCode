@@ -54,6 +54,27 @@ export default function CommentList() {
 				`}
 			/>
 
+			<Comment
+				author="Le Huynh"
+				image="LH"
+				content={`
+					This is honestly the beauty of the internet. 
+					I'm sure people pay good money to take courses 
+					that give you the same amount of information as this video. 
+					But in this case, there's a great, clear teacher, 
+					and you can pause and rewind as much as you need and its free! 
+					I'm really enjoying it.
+				`}
+			/>
+
+			<Comment
+				author="Viet Dinh"
+				image="VD"
+				content={`
+					I will absorb this knowledge!!!!
+				`}
+			/>
+
 			<div style={styles.textbtnShowMore}>Show more comment&hellip;</div>
 		</div>
 	);

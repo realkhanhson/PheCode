@@ -33,16 +33,18 @@ export default function PostItem({ post }: Props) {
 
 	return (
 		<Link href={"/" + post.slug}>
-
 			{/* FIXME no ripple effect */}
 			<div style={styles.container}>
 				<div style={styles.title}>{post.title}</div>
 				<Author author={getAuthor(post.author)} />
 
 				{/* TODO tags */}
-				
+
 				{/* TODO content preview */}
-				<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin, erat ut scelerisque tempor, nisi lectus vestibulum erat, nec volutpat dolor lacus vitae ante. Nam vel orci eros.</span>
+				<span>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin, erat ut scelerisque
+					tempor, nisi lectus vestibulum erat, nec volutpat dolor lacus vitae ante. Nam vel orci eros.
+				</span>
 
 				<InfoBar likes={"69/72"} comments={"42"} time={"Dec 31"} />
 			</div>

@@ -19,44 +19,40 @@ export default function CommentList() {
 		},
 		textbtnShowMore: {
 			color: "#a0a0a0",
-			fontWeight: 700
-		}
-	}
+			fontWeight: 700,
+		},
+	};
 	return (
+		<div style={styles.container}>
+			<AddCommentBox author="OP" />
 
-			<div style={styles.container}>
-
-				<AddCommentBox author="OP" />
-
-				<Comment
-					author="Khanh Son"
-					content={`
+			<Comment
+				author="Khanh Son"
+				content={`
 					This is a false fact. Even when you enjoy it, sometimes it can get frustrating. Some people have
 					trouble focusing. And it has nothing to do with "what they enjoy". Sometimes when programming
 					stresses you out, you should take a break.
 				`}
-				/>
+			/>
 
-				<Comment
-					author="Thien Bui"
-					content={`
+			<Comment
+				author="Thien Bui"
+				content={`
 					You still wanna make sure if you're unfocused by laziness or because you hate it
 				`}
-				/>
+			/>
 
-				<Comment
-					author="Nam Quoc"
-					content={`
+			<Comment
+				author="Nam Quoc"
+				content={`
 					Thank you so much for sharing all this. I'm pretty sure that, I'll gain efficiency by following
 					the promodoro technique. I used to stay watching videos and taking note for about 3h every
 					night. And sometime, I wanted to give up because I felt like I was not really understanding, as
 					if I was just keeping a written version of what I was watching.
 				`}
-				/>
+			/>
 
-				<div style={styles.textbtnShowMore}>
-					Show more comment&hellip;
-				</div>
-			</div>
+			<div style={styles.textbtnShowMore}>Show more comment&hellip;</div>
+		</div>
 	);
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
 import { PostContent } from "@lib/posts";
-import PostItem from "@components/post/PostItem"
+import PostItem from "@components/post/PostItem";
 import Pagination from "../Pagination";
 import { TagContent } from "../../lib/tags";
 
@@ -22,7 +22,7 @@ export default function PostList({ posts, tags, pagination }: Props) {
 		<>
 			<Container maxWidth="lg">
 				<HomeSection>
-					<LinkedHeader title={"For You"} href={"#"}/>
+					<LinkedHeader title={"For You"} href={"#"} />
 					<Grid container alignItems="stretch" spacing={4}>
 						{posts.map((it, i) => (
 							<Grid item key={i} xs={12} md={6} lg={4}>

@@ -1,6 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 
-const Comment = ({author, content}) => {
+const Comment = ({ author, content }) => {
 	const styles = {
 		container: {
 			display: "flex",
@@ -17,7 +17,7 @@ const Comment = ({author, content}) => {
 		authorName: {
 			fontWeight: 700,
 		},
-	}
+	};
 
 	return (
 		<div style={styles.container}>
@@ -27,7 +27,7 @@ const Comment = ({author, content}) => {
 				<div>{content}</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Comment
+export default Comment;

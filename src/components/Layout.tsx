@@ -7,13 +7,16 @@ import { Container } from "@material-ui/core";
 import SearchAppBar from "./navigation/SearchAppBar";
 import Link from "@material-ui/core/Link";
 
+import AppBar2 from "@components/navigation/AppBar2";
+
 type Props = {
 	children: React.ReactNode;
 };
 export default function Layout({ children }: Props) {
 	return (
 		<>
-			<SearchAppBar />
+			{/* <SearchAppBar /> */}
+			<AppBar2 />
 			<Container maxWidth="lg">
 				<Header />
 			</Container>

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const LinkedHeader = ({ title, href }) => {
 	const styleVars = {
-		textSize: "48px"
-	}
+		textSize: "48px",
+	};
 	const styles = {
 		container: {
 			display: "flex",
@@ -20,7 +20,7 @@ const LinkedHeader = ({ title, href }) => {
 		},
 		icon: {
 			width: styleVars.textSize,
-			height: styleVars.textSize
+			height: styleVars.textSize,
 		},
 	};
 

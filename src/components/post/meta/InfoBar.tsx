@@ -1,14 +1,14 @@
-import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
-import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
-import AccessTimeOutlinedIcon from '@material-ui/icons/AccessTimeOutlined';
+import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import AccessTimeOutlinedIcon from "@material-ui/icons/AccessTimeOutlined";
 
-const InfoBar = ({likes, comments, time}) => {
+const InfoBar = ({ likes, comments, time }) => {
 	const styles = {
 		infoBar: {
 			display: "flex",
 			flexFlow: "row",
 			gap: "24px",
-			color: "#808080"
+			color: "#808080",
 		},
 		infoSegment: {
 			display: "flex",
@@ -16,7 +16,7 @@ const InfoBar = ({likes, comments, time}) => {
 			gap: "8px",
 			alignItems: "center",
 		},
-	}
+	};
 
 	return (
 		<div style={styles.infoBar}>
@@ -33,7 +33,7 @@ const InfoBar = ({likes, comments, time}) => {
 				<span>Dec 31</span>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
 export default InfoBar;

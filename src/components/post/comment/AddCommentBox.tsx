@@ -15,15 +15,15 @@ const AddCommentBox = ({ author }) => {
 			background: "none",
 			padding: "8px 16px",
 			width: "100%",
-		}
-	}
+		},
+	};
 
 	return (
 		<div style={styles.container}>
 			<Avatar>{author}</Avatar>
 			<InputBase style={styles.inputTextBox} placeholder="Write your comment…" />
 		</div>
-	)
-}
+	);
+};
 
-export default AddCommentBox
+export default AddCommentBox;

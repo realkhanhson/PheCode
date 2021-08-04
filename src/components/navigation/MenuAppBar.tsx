@@ -1,10 +1,5 @@
-import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
-import InputBase from "@material-ui/core/InputBase";
-import Link from "@material-ui/core/Link";
-import AppBar from "@material-ui/core/AppBar";
-import Divider from "@material-ui/core/Divider";
-
+import React from "react";
+import { Badge, InputBase, AppBar, Divider, InputAdornment, Menu, MenuItem, Link, IconButton } from "@material-ui/core";
 import BookmarkBorderOutlinedIcon from "@material-ui/icons/BookmarkBorderOutlined";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import WhatshotOutlinedIcon from "@material-ui/icons/WhatshotOutlined";
@@ -13,16 +8,20 @@ import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOut
 import ForumOutlinedIcon from "@material-ui/icons/ForumOutlined";
 import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import { InputAdornment } from "@material-ui/core";
+import PersonIcon from "@material-ui/icons/Person";
+import PostAddIcon from "@material-ui/icons/PostAdd";
+import HistoryIcon from "@material-ui/icons/History";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Avatar from "@material-ui/core/Avatar";
 
-const AppBar2 = () => {
+const MenuAppBar = () => {
 	const styles = {
 		appBarSpecifics: {
 			boxShadow: "none",
 			color: "#000000",
 			zIndex: 1030, // Magic number: exactly 1 less than the default z-index for nprogress
 		},
-
 		container: {
 			display: "flex",
 			flexFlow: "row",
@@ -56,7 +55,6 @@ const AppBar2 = () => {
 			// maxWidth: "calc(0.5 * 1920px)",
 			width: "100%",
 		},
-
 		userContainer: {
 			display: "flex",
 			justifyContent: "right",
@@ -72,8 +70,33 @@ const AppBar2 = () => {
 			display: "flex",
 			flexFlow: "row",
 			alignItems: "center",
+			paddingLeft: "15px",
+		},
+		menuAvatar: {
+			display: "flex",
+			padding: "10px",
+		},
+		menuText: {
+			paddingLeft: "15px",
+			paddingTop: "5px",
 		},
 		userName: {},
+	};
+
+	const [auth, setAuth] = React.useState(true);
+	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+	const open = Boolean(anchorEl);
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setAuth(event.target.checked);
+	};
+
+	const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
 	};
 
 	return (
@@ -120,19 +143,67 @@ const AppBar2 = () => {
 							</Badge>
 						</IconButton>
 					</div>
+					<Divider orientation="vertical" flexItem />
 
-					<Divider />
+					{auth && (
+						<div style={styles.userNameContainer}>
+							<div style={styles.userName}>Undefined</div>
+							<IconButton
+								aria-label="account of current user"
+								aria-controls="menu-appbar"
+								aria-haspopup="true"
+								onClick={handleMenu}
+								color="inherit">
+								<AccountCircleOutlinedIcon />
+							</IconButton>
 
-					<div style={styles.userNameContainer}>
-						<div style={styles.userName}>Username</div>
-						<IconButton>
-							<AccountCircleOutlinedIcon />
-						</IconButton>
-					</div>
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorEl}
+								anchorOrigin={{
+									vertical: "top",
+									horizontal: "right",
+								}}
+								keepMounted
+								transformOrigin={{
+									vertical: "top",
+									horizontal: "right",
+								}}
+								open={open}
+								onClose={handleClose}>
+								<div style={styles.menuAvatar}>
+									<Avatar>UN</Avatar>
+									<div style={styles.menuText}>Undefined</div>
+								</div>
+								<Divider />
+								<MenuItem onClick={handleClose}>
+									<PersonIcon />
+									<div style={styles.menuText}>Profile</div>
+								</MenuItem>
+								<MenuItem onClick={handleClose}>
+									<PostAddIcon />
+									<div style={styles.menuText}>Create Post</div>
+								</MenuItem>
+								<MenuItem onClick={handleClose}>
+									<HistoryIcon />
+									<div style={styles.menuText}>History</div>
+								</MenuItem>
+								<MenuItem onClick={handleClose}>
+									<SettingsIcon />
+									<div style={styles.menuText}>Settings</div>
+								</MenuItem>
+								<Divider />
+								<MenuItem onClick={handleClose}>
+									<ExitToAppIcon />
+									<div style={styles.menuText}>Sign Out</div>
+								</MenuItem>
+							</Menu>
+						</div>
+					)}
 				</div>
 			</div>
 		</AppBar>
 	);
 };
 
-export default AppBar2;
+export default MenuAppBar;

@@ -35,7 +35,6 @@ const theme = createMuiTheme(
 					},
 				},
 			},
-
 			MuiCardActions: {
 				root: {
 					padding: "0 0 20px 20px",
@@ -69,6 +68,20 @@ const theme = createMuiTheme(
 				"spacing-xs-5": {
 					width: "100%",
 					margin: 0,
+				},
+			},
+			MuiMenu: {
+				paper: {
+					backgroundColor: "#FFFFFF",
+					borderRadius: "20px",
+					minWidth: "200px",
+					boxShadow: "0 6px 20px 1px rgba(0, 0, 0, 0.12)",
+					margin: "auto",
+					transition: "0.3s",
+					"&:hover": {
+						transform: "translateY(-3px)",
+						boxShadow: "0 4px 20px 0 rgba(0,0,0,0.12)",
+					},
 				},
 			},
 		},

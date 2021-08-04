@@ -14,8 +14,32 @@ import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Avatar from "@material-ui/core/Avatar";
+import Slide from "@material-ui/core/Slide";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+interface Props {
+	/**
+	 * Injected by the documentation to work in an iframe.
+	 * You won't need it on your project.
+	 */
+	window?: () => Window;
+	children: React.ReactElement;
+}
 
-const MenuAppBar = () => {
+function HideOnScroll(props: Props) {
+	const { children, window } = props;
+	// Note that you normally won't need to set the window ref as useScrollTrigger
+	// will default to window.
+	// This is only being set here because the demo is in an iframe.
+	const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+	return (
+		<Slide appear={false} direction="down" in={!trigger}>
+			{children}
+		</Slide>
+	);
+}
+
+const MenuAppBar = (props: Props) => {
 	const styles = {
 		appBarSpecifics: {
 			boxShadow: "none",
@@ -100,109 +124,111 @@ const MenuAppBar = () => {
 	};
 
 	return (
-		<AppBar position="sticky" style={styles.appBarSpecifics}>
-			<div style={styles.container}>
-				<div style={styles.tabs}>
-					<Link href="/">
-						<img src="/images/logo.png" style={styles.logoTab} />
-					</Link>
-					<IconButton>
-						<BookmarkBorderOutlinedIcon />
-					</IconButton>
-					<IconButton>
-						<FavoriteBorderOutlinedIcon />
-					</IconButton>
-					<IconButton>
-						<WhatshotOutlinedIcon />
-					</IconButton>
-				</div>
-
-				<InputBase
-					style={styles.searchBox}
-					placeholder="What are you looking for?"
-					startAdornment={
-						<InputAdornment position="start">
-							<SearchIcon />
-						</InputAdornment>
-					}
-				/>
-
-				<div style={styles.userContainer}>
-					<div style={styles.userBtns}>
+		<HideOnScroll {...props}>
+			<AppBar position="sticky" style={styles.appBarSpecifics}>
+				<div style={styles.container}>
+					<div style={styles.tabs}>
+						<Link href="/">
+							<img src="/images/logo.png" style={styles.logoTab} />
+						</Link>
 						<IconButton>
-							<AddCircleOutlineOutlinedIcon />
+							<BookmarkBorderOutlinedIcon />
 						</IconButton>
 						<IconButton>
-							<Badge badgeContent={4} color="secondary">
-								<ForumOutlinedIcon />
-							</Badge>
+							<FavoriteBorderOutlinedIcon />
 						</IconButton>
 						<IconButton>
-							<Badge badgeContent={8} color="secondary">
-								<NotificationsOutlinedIcon />
-							</Badge>
+							<WhatshotOutlinedIcon />
 						</IconButton>
 					</div>
-					<Divider orientation="vertical" flexItem />
 
-					{auth && (
-						<div style={styles.userNameContainer}>
-							<div style={styles.userName}>Undefined</div>
-							<IconButton
-								aria-label="account of current user"
-								aria-controls="menu-appbar"
-								aria-haspopup="true"
-								onClick={handleMenu}
-								color="inherit">
-								<AccountCircleOutlinedIcon />
+					<InputBase
+						style={styles.searchBox}
+						placeholder="What are you looking for?"
+						startAdornment={
+							<InputAdornment position="start">
+								<SearchIcon />
+							</InputAdornment>
+						}
+					/>
+
+					<div style={styles.userContainer}>
+						<div style={styles.userBtns}>
+							<IconButton>
+								<AddCircleOutlineOutlinedIcon />
 							</IconButton>
-
-							<Menu
-								id="menu-appbar"
-								anchorEl={anchorEl}
-								anchorOrigin={{
-									vertical: "top",
-									horizontal: "right",
-								}}
-								keepMounted
-								transformOrigin={{
-									vertical: "top",
-									horizontal: "right",
-								}}
-								open={open}
-								onClose={handleClose}>
-								<div style={styles.menuAvatar}>
-									<Avatar>UN</Avatar>
-									<div style={styles.menuText}>Undefined</div>
-								</div>
-								<Divider />
-								<MenuItem onClick={handleClose}>
-									<PersonIcon />
-									<div style={styles.menuText}>Profile</div>
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									<PostAddIcon />
-									<div style={styles.menuText}>Create Post</div>
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									<HistoryIcon />
-									<div style={styles.menuText}>History</div>
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									<SettingsIcon />
-									<div style={styles.menuText}>Settings</div>
-								</MenuItem>
-								<Divider />
-								<MenuItem onClick={handleClose}>
-									<ExitToAppIcon />
-									<div style={styles.menuText}>Sign Out</div>
-								</MenuItem>
-							</Menu>
+							<IconButton>
+								<Badge badgeContent={4} color="secondary">
+									<ForumOutlinedIcon />
+								</Badge>
+							</IconButton>
+							<IconButton>
+								<Badge badgeContent={8} color="secondary">
+									<NotificationsOutlinedIcon />
+								</Badge>
+							</IconButton>
 						</div>
-					)}
+						<Divider orientation="vertical" flexItem />
+
+						{auth && (
+							<div style={styles.userNameContainer}>
+								<div style={styles.userName}>Undefined</div>
+								<IconButton
+									aria-label="account of current user"
+									aria-controls="menu-appbar"
+									aria-haspopup="true"
+									onClick={handleMenu}
+									color="inherit">
+									<AccountCircleOutlinedIcon />
+								</IconButton>
+
+								<Menu
+									id="menu-appbar"
+									anchorEl={anchorEl}
+									anchorOrigin={{
+										vertical: "top",
+										horizontal: "right",
+									}}
+									keepMounted
+									transformOrigin={{
+										vertical: "top",
+										horizontal: "right",
+									}}
+									open={open}
+									onClose={handleClose}>
+									<div style={styles.menuAvatar}>
+										<Avatar>UN</Avatar>
+										<div style={styles.menuText}>Undefined</div>
+									</div>
+									<Divider />
+									<MenuItem onClick={handleClose}>
+										<PersonIcon />
+										<div style={styles.menuText}>Profile</div>
+									</MenuItem>
+									<MenuItem onClick={handleClose}>
+										<PostAddIcon />
+										<div style={styles.menuText}>Create Post</div>
+									</MenuItem>
+									<MenuItem onClick={handleClose}>
+										<HistoryIcon />
+										<div style={styles.menuText}>History</div>
+									</MenuItem>
+									<MenuItem onClick={handleClose}>
+										<SettingsIcon />
+										<div style={styles.menuText}>Settings</div>
+									</MenuItem>
+									<Divider />
+									<MenuItem onClick={handleClose}>
+										<ExitToAppIcon />
+										<div style={styles.menuText}>Sign Out</div>
+									</MenuItem>
+								</Menu>
+							</div>
+						)}
+					</div>
 				</div>
-			</div>
-		</AppBar>
+			</AppBar>
+		</HideOnScroll>
 	);
 };
 

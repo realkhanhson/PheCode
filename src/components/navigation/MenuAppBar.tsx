@@ -10,6 +10,7 @@ import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined"
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import PersonIcon from "@material-ui/icons/Person";
 import PostAddIcon from "@material-ui/icons/PostAdd";
+import CreateIcon from "@material-ui/icons/Create";
 import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
@@ -17,19 +18,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Slide from "@material-ui/core/Slide";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 interface Props {
-	/**
-	 * Injected by the documentation to work in an iframe.
-	 * You won't need it on your project.
-	 */
 	window?: () => Window;
 	children: React.ReactElement;
 }
 
 function HideOnScroll(props: Props) {
 	const { children, window } = props;
-	// Note that you normally won't need to set the window ref as useScrollTrigger
-	// will default to window.
-	// This is only being set here because the demo is in an iframe.
 	const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
 	return (

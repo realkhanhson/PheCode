@@ -4,12 +4,11 @@ import BookmarkBorderOutlinedIcon from "@material-ui/icons/BookmarkBorderOutline
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import WhatshotOutlinedIcon from "@material-ui/icons/WhatshotOutlined";
 import SearchIcon from "@material-ui/icons/Search";
-import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import ForumOutlinedIcon from "@material-ui/icons/ForumOutlined";
 import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import PersonIcon from "@material-ui/icons/Person";
-import PostAddIcon from "@material-ui/icons/PostAdd";
+import DescriptionIcon from '@material-ui/icons/Description';
 import CreateIcon from "@material-ui/icons/Create";
 import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -149,7 +148,7 @@ const MenuAppBar = (props: Props) => {
 					<div style={styles.userContainer}>
 						<div style={styles.userBtns}>
 							<IconButton>
-								<AddCircleOutlineOutlinedIcon />
+								<CreateIcon />
 							</IconButton>
 							<IconButton>
 								<Badge badgeContent={4} color="secondary">
@@ -200,8 +199,8 @@ const MenuAppBar = (props: Props) => {
 										<div style={styles.menuText}>Profile</div>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
-										<PostAddIcon />
-										<div style={styles.menuText}>Create Post</div>
+										<DescriptionIcon />
+										<div style={styles.menuText}>Post Management</div>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
 										<HistoryIcon />

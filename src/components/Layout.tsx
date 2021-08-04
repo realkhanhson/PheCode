@@ -3,16 +3,15 @@ import Header from "./navigation/Header";
 import Copyright from "./navigation/Copyright";
 import { SocialList } from "./navigation/SocialList";
 import { Container } from "@material-ui/core";
-
 import MenuAppBar from "@components/navigation/MenuAppBar";
 
 type Props = {
 	children: React.ReactNode;
 };
+
 export default function Layout({ children }: Props) {
 	return (
 		<>
-			{/* <SearchAppBar /> */}
 			<MenuAppBar />
 			<Container maxWidth="lg">
 				<Header />

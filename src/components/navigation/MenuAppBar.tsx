@@ -16,23 +16,8 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Avatar from "@material-ui/core/Avatar";
 import Slide from "@material-ui/core/Slide";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-interface Props {
-	window?: () => Window;
-	children: React.ReactElement;
-}
 
-function HideOnScroll(props: Props) {
-	const { children, window } = props;
-	const trigger = useScrollTrigger({ target: window ? window() : undefined });
-
-	return (
-		<Slide appear={false} direction="down" in={!trigger}>
-			{children}
-		</Slide>
-	);
-}
-
-const MenuAppBar = (props: Props) => {
+const MenuAppBar = () => {
 	const styles = {
 		appBarSpecifics: {
 			boxShadow: "none",
@@ -104,10 +89,6 @@ const MenuAppBar = (props: Props) => {
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
 
-	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setAuth(event.target.checked);
-	};
-
 	const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -116,8 +97,10 @@ const MenuAppBar = (props: Props) => {
 		setAnchorEl(null);
 	};
 
+	const trigger = useScrollTrigger();
+
 	return (
-		<HideOnScroll {...props}>
+		<Slide appear={false} direction="down" in={!trigger}>
 			<AppBar position="sticky" style={styles.appBarSpecifics}>
 				<div style={styles.container}>
 					<div style={styles.tabs}>
@@ -221,7 +204,7 @@ const MenuAppBar = (props: Props) => {
 					</div>
 				</div>
 			</AppBar>
-		</HideOnScroll>
+		</Slide>
 	);
 };
 

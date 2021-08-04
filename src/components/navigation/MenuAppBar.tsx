@@ -10,6 +10,7 @@ import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined"
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import PersonIcon from "@material-ui/icons/Person";
 import PostAddIcon from "@material-ui/icons/PostAdd";
+import CreateIcon from "@material-ui/icons/Create";
 import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
@@ -130,7 +131,8 @@ const MenuAppBar = () => {
 				<div style={styles.userContainer}>
 					<div style={styles.userBtns}>
 						<IconButton>
-							<AddCircleOutlineOutlinedIcon />
+							{/* <AddCircleOutlineOutlinedIcon /> */}
+							<CreateIcon />
 						</IconButton>
 						<IconButton>
 							<Badge badgeContent={4} color="secondary">
@@ -179,10 +181,6 @@ const MenuAppBar = () => {
 								<MenuItem onClick={handleClose}>
 									<PersonIcon />
 									<div style={styles.menuText}>Profile</div>
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									<PostAddIcon />
-									<div style={styles.menuText}>Create Post</div>
 								</MenuItem>
 								<MenuItem onClick={handleClose}>
 									<HistoryIcon />

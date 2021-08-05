@@ -9,13 +9,13 @@ import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined"
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import PersonIcon from "@material-ui/icons/Person";
 import DescriptionIcon from "@material-ui/icons/Description";
-import CreateIcon from "@material-ui/icons/Create";
 import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Avatar from "@material-ui/core/Avatar";
 import Slide from "@material-ui/core/Slide";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import CreatePost from "../post/CreatePost";
 
 const MenuAppBar = () => {
 	const styles = {
@@ -130,9 +130,7 @@ const MenuAppBar = () => {
 
 					<div style={styles.userContainer}>
 						<div style={styles.userBtns}>
-							<IconButton>
-								<CreateIcon />
-							</IconButton>
+							<CreatePost />
 							<IconButton>
 								<Badge badgeContent={4} color="secondary">
 									<ForumOutlinedIcon />

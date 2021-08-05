@@ -33,6 +33,11 @@ export default function PostItem({ post }: Props) {
 			height: "64px",
 			fontSize: "32px",
 		},
+
+		contentPreview: {
+			textAlign: "justify",
+		},
+
 		infobar: {},
 	};
 
@@ -46,10 +51,10 @@ export default function PostItem({ post }: Props) {
 				{/* TODO tags */}
 
 				{/* TODO content preview */}
-				<span>
+				<div style={styles.contentPreview}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin, erat ut scelerisque
 					tempor, nisi lectus vestibulum erat, nec volutpat dolor lacus vitae ante. Nam vel orci eros.
-				</span>
+				</div>
 
 				<InfoBar likes={"69/72"} comments={"42"} time={"Dec 31"} />
 			</div>

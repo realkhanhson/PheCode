@@ -2,11 +2,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import TagPostList from "../../components/post/tag/TagPostList";
 import config from "../../lib/config";
-import { countPosts, listPostContent, PostContent } from "../../lib/posts";
+import { countPosts, listPostContent, PostContent, PostCMS } from "../../lib/posts";
 import { getTag, listTags, TagContent } from "../../lib/tags";
 
 type Props = {
-	posts: PostContent[];
+	posts: PostCMS[];
 	tag: TagContent;
 	page?: string;
 	pagination: {

@@ -1,12 +1,12 @@
 import React from "react";
-import { PostContent } from "../../../lib/posts";
+import { PostCMS } from "../../../lib/posts";
 import { TagContent } from "../../../lib/tags";
 import PostItem from "../PostItem";
 import Pagination from "../../Pagination";
 import { Container, Grid } from "@material-ui/core";
 
 type Props = {
-	posts: PostContent[];
+	posts: PostCMS[];
 	tag: TagContent;
 	pagination: {
 		current: number;

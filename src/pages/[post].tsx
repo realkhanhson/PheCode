@@ -16,7 +16,7 @@ import { TwitterTweetEmbed } from "react-twitter-embed";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../lib/graphcms";
 
 export type Props = {
-	post: any;
+	post?: any;
 	preview: boolean;
 	morePosts: any;
 };
@@ -29,14 +29,14 @@ export default function Post({ post, preview, morePosts }: Props) {
 	}
 	return (
 		<PostLayout
-			title={post.title}
-			date={parseISO(post.date)}
-			slug={post.slug}
-			tags={post.tags}
-			author={post.author}
+			title={post?.title}
+			date={parseISO(post?.date)}
+			slug={post?.slug}
+			tags={post?.tags}
+			author={post?.author}
 			description={""}
-			image={post.coverImage}>
-			<div dangerouslySetInnerHTML={{ __html: post.content?.html }} />
+			image={post?.coverImage}>
+			<div dangerouslySetInnerHTML={{ __html: post?.content.html }} />
 		</PostLayout>
 	);
 }

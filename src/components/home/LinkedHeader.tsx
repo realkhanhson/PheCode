@@ -26,7 +26,7 @@ const LinkedHeader = ({ title, href }) => {
 	};
 
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<div style={styles.container}>
 				<a style={styles.link}>{title}</a>
 				<ArrowForwardIosIcon style={styles.icon} />

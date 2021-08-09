@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import Image from "next/image";
 import Head from "next/head";
+import Layout from "../components/Layout";
 import { Container } from "@material-ui/core";
-
 export default function PageNotFound() {
 	return (
 		<Layout>
@@ -10,7 +10,7 @@ export default function PageNotFound() {
 					<title>404 Not Found</title>
 					<meta property="og:title" content="Luzshine" key="title" />
 				</Head>
-				<img src="https://i.imgur.com/1gEdKVZ.jpeg" />
+				{/* <Image alt={"404"} src={"https://i.imgur.com/1gEdKVZ.jpeg"} layout="fill" /> */}
 			</Container>
 			<style jsx>{`
 				.container {

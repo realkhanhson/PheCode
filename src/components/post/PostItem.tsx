@@ -35,7 +35,7 @@ export default function PostItem({ post }: Props) {
 		},
 
 		contentPreview: {
-			textAlign: "justify",
+			justifyContent: "center",
 		},
 
 		infobar: {},

@@ -7,9 +7,9 @@ export type AuthorContent = {
 };
 
 export type AuthorCMS = {
-  readonly name: any;
-  readonly picture: any;
-}
+	readonly name: any;
+	readonly picture: any;
+};
 
 const authorMap: { [key: string]: AuthorContent } = generateAuthorMap();
 

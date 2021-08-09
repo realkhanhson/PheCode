@@ -6,6 +6,11 @@ export type AuthorContent = {
 	readonly introduction: string;
 };
 
+export type AuthorCMS = {
+  readonly name: any;
+  readonly picture: any;
+}
+
 const authorMap: { [key: string]: AuthorContent } = generateAuthorMap();
 
 function generateAuthorMap(): { [key: string]: AuthorContent } {

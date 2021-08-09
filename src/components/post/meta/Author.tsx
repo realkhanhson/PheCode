@@ -1,7 +1,7 @@
-import { AuthorContent } from "../../../lib/authors";
+import { AuthorContent, AuthorCMS } from "../../../lib/authors";
 
 type Props = {
-	author: AuthorContent;
+	author: AuthorCMS;
 };
 
 const Author = ({ author }: Props) => {

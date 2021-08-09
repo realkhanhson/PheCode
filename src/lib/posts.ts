@@ -16,6 +16,22 @@ export type PostContent = {
 	readonly content?: string;
 };
 
+export type PostCMS = {
+	readonly date: string;
+	readonly title: string;
+	readonly slug: string;
+	readonly excerpt: string;
+	readonly tags?: string[];
+	readonly coverImage: {
+		url: string;
+	};
+	readonly author: {
+		name: any;
+		picture: any;
+	};
+	readonly content?: any;
+};
+
 let postCache: PostContent[];
 
 export function fetchPostContent(): PostContent[] {

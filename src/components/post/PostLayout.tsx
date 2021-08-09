@@ -13,15 +13,13 @@ type Props = {
 	title: string;
 	date: Date;
 	slug: string;
-	tags: string[];
-	author: string;
+	tags?: string[];
+	author: any;
 	description?: string;
 	image: string;
 	children: React.ReactNode;
 };
-export default function PostLayout({ title, date, slug, author, tags, description = "", image, children }: Props) {
-	const keywords = tags.map((it) => getTag(it).name);
-	const authorName = getAuthor(author).name;
+export default function PostLayout({ title, date, slug, author, tags, description, image, children }: Props) {
 	return (
 		<Layout>
 			<Paper elevation={0}>
@@ -32,14 +30,18 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 							{title}
 						</Typography>
 						<div className={"metadata"}>
-							<ul className={"tag-list"}>
-								{tags.map((it, i) => (
-									<li key={i}>
-										<TagButton tag={getTag(it)} />
-									</li>
-								))}
-							</ul>
-							<Author author={getAuthor(author)} />
+							{tags ? (
+								<ul className={"tag-list"}>
+									{tags.map((it, i) => (
+										<li key={i}>
+											<TagButton tag={getTag(it)} />
+										</li>
+									))}
+								</ul>
+							) : (
+								<div></div>
+							)}
+							<Author author={author} />
 							<Date date={date} />
 						</div>
 					</header>

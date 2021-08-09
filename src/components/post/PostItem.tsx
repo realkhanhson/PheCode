@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostContent } from "../../lib/posts";
+import { PostContent, PostCMS } from "../../lib/posts";
 import Date from "./meta/Date";
 import { parseISO } from "date-fns";
 import { getAuthor } from "../../lib/authors";
@@ -9,7 +9,7 @@ import { Card, CardContent, CardMedia, CardActions, Typography, CardActionArea }
 import InfoBar from "@components/post/meta/InfoBar";
 
 type Props = {
-	post: PostContent;
+	post: PostCMS;
 };
 
 export default function PostItem({ post }: Props) {
@@ -46,7 +46,7 @@ export default function PostItem({ post }: Props) {
 			{/* FIXME no ripple effect */}
 			<div style={styles.container}>
 				<div style={styles.title}>{post.title}</div>
-				<Author author={getAuthor(post.author)} />
+				<Author author={post.author} />
 
 				{/* TODO tags */}
 

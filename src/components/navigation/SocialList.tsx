@@ -9,39 +9,19 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 export function SocialList({}) {
 	return (
 		<div>
-			<a
-				title="Facebook"
-				href={`https://www.facebook.com/${config.facebook_account}`}
-				target="_blank"
-				rel="noopener">
+			<a>
 				<FacebookIcon style={{ fontSize: 45 }} color="action" />
 			</a>
-			<a
-				title="Youtube"
-				href={`https://www.youtube.com/channel/${config.youtube_account}`}
-				target="_blank"
-				rel="noopener">
+			<a>
 				<YouTubeIcon style={{ fontSize: 45 }} color="action" />
 			</a>
-			<a
-				title="Instagram"
-				href={`https://www.instagram.com/${config.instagram_account}`}
-				target="_blank"
-				rel="noopener">
+			<a>
 				<InstagramIcon style={{ fontSize: 45 }} color="action" />
 			</a>
-			<a
-				title="Twitter"
-				href={`https://www.twitter.com/${config.twitter_account}`}
-				target="_blank"
-				rel="noopener">
+			<a>
 				<TwitterIcon style={{ fontSize: 45 }} color="action" />
 			</a>
-			<a
-				title="Linkedin"
-				href={`https://www.linkedin.com/in/${config.linkedin_account}`}
-				target="_blank"
-				rel="noopener">
+			<a>
 				<LinkedInIcon style={{ fontSize: 45 }} color="action" />
 			</a>
 			<style jsx>{`

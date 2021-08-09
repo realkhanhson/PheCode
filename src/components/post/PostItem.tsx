@@ -42,7 +42,7 @@ export default function PostItem({ post }: Props) {
 	};
 
 	return (
-		<Link href={"/" + post.slug}>
+		<Link href={"/" + post.slug} passHref>
 			{/* FIXME no ripple effect */}
 			<div style={styles.container}>
 				<div style={styles.title}>{post.title}</div>

@@ -86,9 +86,9 @@ const theme = createMuiTheme(
 			},
 			MuiDialog: {
 				paper: {
-					borderRadius: "20px"
-				}
-			}
+					borderRadius: "20px",
+				},
+			},
 		},
 	},
 	viVN

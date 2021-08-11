@@ -5,8 +5,12 @@ type Props = {
 };
 export default function Date({ date }: Props) {
 	return (
-		<time dateTime={formatISO(date)}>
-			<span>{format(date, "dd-LL-yyyy")}</span>
+		// FIXME
+		// <time dateTime={formatISO(date)}>
+		<time dateTime={formatISO(0)}>
+			{/* FIXME */}
+			{/* <span>{format(date, "dd-LL-yyyy")}</span> */}
+			<span>{format(0, "dd-LL-yyyy")}</span>
 			<style jsx>
 				{`
 					span {

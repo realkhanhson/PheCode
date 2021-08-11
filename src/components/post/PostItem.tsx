@@ -35,7 +35,7 @@ export default function PostItem({ post }: Props) {
 		},
 
 		contentPreview: {
-			textAlign: "justify",
+			textAlign: "justify" as const, // https://stackoverflow.com/a/63440317
 		},
 
 		infobar: {},

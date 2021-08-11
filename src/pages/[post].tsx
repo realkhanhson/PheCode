@@ -1,18 +1,8 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import renderToString from "next-mdx-remote/render-to-string";
-import { MdxRemote } from "next-mdx-remote/types";
-import hydrate from "next-mdx-remote/hydrate";
-import matter from "gray-matter";
-import { fetchPostContent } from "../lib/posts";
-import fs from "fs";
-import yaml from "js-yaml";
 import { parseISO } from "date-fns";
+import { GetStaticPaths, GetStaticProps } from "next";
+import ErrorPage from "next/error";
+import { useRouter } from "next/router";
 import PostLayout from "../components/post/PostLayout";
-import InstagramEmbed from "react-instagram-embed";
-import YouTube from "react-youtube";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../lib/graphcms";
 
 export type Props = {
@@ -51,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
-	const slug = params.post as String;
+	const slug = params.post as string;
 	const data = await getPostAndMorePosts(slug, preview);
 
 	return {

@@ -26,7 +26,8 @@ const Author = ({ author }: Props) => {
 			<svg style={styles.authorAvatar} height="32" width="32">
 				<circle cx="16" cy="16" r="16" fill="#cccccc" />
 			</svg>
-			<span style={styles.authorName}>{author.name}</span>
+			{/* FIXME */}
+			{/* <span style={styles.authorName}>{author.name}</span> */}
 		</div>
 	);
 };

@@ -6,7 +6,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
-export function SocialList({}) {
+export function SocialList() {
 	return (
 		<div>
 			<a>

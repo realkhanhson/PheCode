@@ -30,23 +30,24 @@ export default function CreatePost() {
 
 	React.useEffect(() => {
 		editorRef.current = {
-			CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
+			// eslint-disable-next-line @typescript-eslint/no-var-requires
+			CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
 			ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
 		};
 	}, []);
 
 	const [state, setState] = React.useState({
-    age: '',
-    name: 'hai',
-  });
+		age: "",
+		name: "hai",
+	});
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-  };
+	const handleChange = (event) => {
+		const name = event.target.name;
+		setState({
+			...state,
+			[name]: event.target.value,
+		});
+	};
 
 	return (
 		<>
@@ -76,7 +77,7 @@ export default function CreatePost() {
 						/>
 					</form>
 					<br />
-					<FormControl variant="outlined" >
+					<FormControl variant="outlined">
 						<InputLabel htmlFor="outlined-age-native-simple">Add Tag</InputLabel>
 						<Select
 							native
@@ -87,7 +88,7 @@ export default function CreatePost() {
 								name: "age",
 								id: "outlined-age-native-simple",
 							}}>
-							<option aria-label="None"  />
+							<option aria-label="None" />
 							<option value={10}>Reactjs</option>
 							<option value={20}>Netlify</option>
 							<option value={30}>Material-UI</option>

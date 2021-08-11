@@ -14,7 +14,7 @@ export type AuthorCMS = {
 const authorMap: { [key: string]: AuthorContent } = generateAuthorMap();
 
 function generateAuthorMap(): { [key: string]: AuthorContent } {
-	let result: { [key: string]: AuthorContent } = {};
+	const result: { [key: string]: AuthorContent } = {};
 	for (const author of authors.authors) {
 		result[author.slug] = author;
 	}

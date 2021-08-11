@@ -53,10 +53,9 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 			<style jsx>
 				{`
 					.container {
-						max-width: 40rem;
+						max-width: 43rem;
 						width: 100%;
 						margin: 0 auto;
-						padding: 0 1rem;
 						box-sizing: border-box;
 						z-index: 0;
 					}

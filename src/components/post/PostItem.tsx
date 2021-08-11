@@ -35,7 +35,7 @@ export default function PostItem({ post }: Props) {
 		},
 
 		contentPreview: {
-			justifyContent: "center",
+			textAlign: "justify",
 		},
 
 		infobar: {},
@@ -48,14 +48,7 @@ export default function PostItem({ post }: Props) {
 				<div style={styles.title}>{post.title}</div>
 				<Author author={post.author} />
 
-				{/* TODO tags */}
-
-				{/* TODO content preview */}
-				<div style={styles.contentPreview}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin, erat ut scelerisque
-					tempor, nisi lectus vestibulum erat, nec volutpat dolor lacus vitae ante. Nam vel orci eros.
-				</div>
-
+				<div style={styles.contentPreview}>{post.excerpt}</div>
 				<InfoBar likes={"69/72"} comments={"42"} time={"Dec 31"} />
 			</div>
 

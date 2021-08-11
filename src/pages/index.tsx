@@ -17,9 +17,9 @@ type Props = {
 export default function Index({ posts, tags, pagination }: Props) {
 	return (
 		<Layout>
-			<PostList posts={posts.slice(0, 4)} title={"Continue Reading"} tags={tags} pagination={pagination} />
-			{/* <PostList posts={posts.slice(1, 3)} title={"For You"} tags={tags} pagination={pagination} />
-			<PostList posts={posts.slice(0)} title={"Trending on PheCode"} tags={tags} pagination={pagination} /> */}
+			<PostList posts={posts.slice(0, 3)} title={"Continue Reading"} tags={tags} pagination={pagination} />
+			<PostList posts={posts.slice(3, 5)} title={"For You"} tags={tags} pagination={pagination} />
+			<PostList posts={posts.slice(5)} title={"Trending on PheCode"} tags={tags} pagination={pagination} />
 		</Layout>
 	);
 }

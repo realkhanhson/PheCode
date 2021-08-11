@@ -54,15 +54,12 @@ const MenuAppBar = () => {
 			borderRadius: "8px",
 			padding: "8px 16px",
 			color: "#808080",
-			// maxWidth: "calc(0.5 * 1920px)",
 			width: "100%",
 		},
 		userContainer: {
 			display: "flex",
 			justifyContent: "right",
-			flex: "1",
-			marginLeft: "auto",
-			flexFlow: "row",
+			marginLeft: "150px",
 		},
 		userBtns: {
 			display: "flex",

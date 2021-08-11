@@ -1,4 +1,4 @@
-import { types } from "node:util";
+// import { types } from "node:util";
 
 async function fetchAPI(query, { variables, preview }: any = {}) {
 	const res = await fetch(process.env.GRAPHCMS_PROJECT_API, {

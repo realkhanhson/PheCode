@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import PostList from "../../components/post/PostList";
 import config from "../../lib/config";
-import { countPosts, listPostContent, PostContent, PostCMS } from "../../lib/posts";
+import { countPosts, listPostContent, PostContent } from "../../lib/posts";
 import { listTags, TagContent } from "../../lib/tags";
 
 type Props = {

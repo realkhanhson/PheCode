@@ -2,9 +2,8 @@ import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import PostList from "../components/post/PostList";
 import config from "../lib/config";
-import { countPosts, listPostContent, PostContent, PostCMS } from "../lib/posts";
+import { countPosts, listPostContent, PostContent } from "../lib/posts";
 import { listTags, TagContent } from "../lib/tags";
-import { getAllPostsForHome } from "../lib/graphcms";
 
 type Props = {
 	posts: PostContent[];
@@ -25,19 +24,19 @@ export default function Index({ posts, tags, pagination }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = listPostContent(1, config.posts_per_page);
-  const tags = listTags();
-  const pagination = {
-    current: 1,
-    pages: Math.ceil(countPosts() / config.posts_per_page),
-  };
-  return {
-    props: {
-      posts,
-      tags,
-      pagination,
-    },
-  };
+	const posts = listPostContent(1, config.posts_per_page);
+	const tags = listTags();
+	const pagination = {
+		current: 1,
+		pages: Math.ceil(countPosts() / config.posts_per_page),
+	};
+	return {
+		props: {
+			posts,
+			tags,
+			pagination,
+		},
+	};
 };
 
 // export const getStaticProps: GetStaticProps = async () => {

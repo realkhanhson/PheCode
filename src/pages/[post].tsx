@@ -25,7 +25,7 @@ export type Props = {
 
 const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
 const slugToPostContent = ((postContents) => {
-  let hash = {};
+  const hash = {};
   postContents.forEach((it) => (hash[it.slug] = it));
   return hash;
 })(fetchPostContent());
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: {
-      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as Record<string, unknown>,
     },
   });
   const mdxSource = await renderToString(content, { components, scope: data });

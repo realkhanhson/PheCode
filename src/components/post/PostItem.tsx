@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostContent, PostCMS } from "../../lib/posts";
+import { PostContent } from "../../lib/posts";
 import Date from "./meta/Date";
 import { parseISO } from "date-fns";
 import { getAuthor } from "../../lib/authors";

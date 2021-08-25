@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
-import { PostCMS, PostContent } from "@lib/posts";
+import { PostContent } from "@lib/posts";
 import PostItem from "@components/post/PostItem";
 import Pagination from "../Pagination";
 import { TagContent } from "../../lib/tags";

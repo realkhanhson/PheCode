@@ -9,7 +9,7 @@ import { Card, CardContent, CardMedia, CardActions, Typography, CardActionArea }
 import InfoBar from "@components/post/meta/InfoBar";
 
 type Props = {
-	post: PostCMS;
+	post: PostContent;
 };
 
 export default function PostItem({ post }: Props) {
@@ -46,31 +46,15 @@ export default function PostItem({ post }: Props) {
 			{/* FIXME no ripple effect */}
 			<div style={styles.container}>
 				<div style={styles.title}>{post.title}</div>
-				<Author author={post.author} />
 
-				<div style={styles.contentPreview}>{post.excerpt}</div>
+				<Typography variant="body2" color="textSecondary" component="p">
+					<Date date={parseISO(post.date)} />
+					&nbsp;&nbsp;
+					<Author author={getAuthor(post.author)} />
+				</Typography>
+
 				<InfoBar likes={"69/72"} comments={"42"} time={"Dec 31"} />
 			</div>
-
-			{/* <Card className="MuiPostCard--normal">
-				<CardActionArea>
-					<CardMedia>
-						<Image src={post.image} style={{ height: "250px", padding: 0 }} />
-					</CardMedia>
-					<CardContent>
-						<Typography gutterBottom variant="h6" component="h2">
-							{post.title}
-						</Typography>
-					</CardContent>
-				</CardActionArea>
-				<CardActions>
-					<Typography variant="body2" color="textSecondary" component="p">
-						<Date date={parseISO(post.date)} />
-						&nbsp;&nbsp;
-						<Author author={getAuthor(post.author)} />
-					</Typography>
-				</CardActions>
-			</Card> */}
 		</Link>
 	);
 }

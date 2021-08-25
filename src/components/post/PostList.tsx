@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
-import { PostCMS } from "@lib/posts";
+import { PostCMS, PostContent } from "@lib/posts";
 import PostItem from "@components/post/PostItem";
 import Pagination from "../Pagination";
 import { TagContent } from "../../lib/tags";
@@ -9,7 +9,7 @@ import LinkedHeader from "@components/home/LinkedHeader";
 import HomeSection from "@components/home/HomeSection";
 
 type Props = {
-	posts: PostCMS[];
+	posts: PostContent[];
 	tags: TagContent[];
 	pagination: {
 		current: number;

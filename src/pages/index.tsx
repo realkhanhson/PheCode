@@ -7,7 +7,7 @@ import { listTags, TagContent } from "../lib/tags";
 import { getAllPostsForHome } from "../lib/graphcms";
 
 type Props = {
-	posts: PostCMS[];
+	posts: PostContent[];
 	tags: TagContent[];
 	pagination: {
 		current: number;
@@ -24,17 +24,21 @@ export default function Index({ posts, tags, pagination }: Props) {
 	);
 }
 
-export async function getStaticProps({ preview = false }) {
-	const posts = (await getAllPostsForHome(preview)) || [];
-	const tags = listTags();
-	const pagination = {
-		current: 1,
-		pages: Math.ceil(countPosts() / config.posts_per_page),
-	};
-	return {
-		props: { posts, tags, pagination },
-	};
-}
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = listPostContent(1, config.posts_per_page);
+  const tags = listTags();
+  const pagination = {
+    current: 1,
+    pages: Math.ceil(countPosts() / config.posts_per_page),
+  };
+  return {
+    props: {
+      posts,
+      tags,
+      pagination,
+    },
+  };
+};
 
 // export const getStaticProps: GetStaticProps = async () => {
 // 	const posts = listPostContent(1, config.posts_per_page);

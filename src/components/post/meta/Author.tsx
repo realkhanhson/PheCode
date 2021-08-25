@@ -1,7 +1,7 @@
 import { AuthorContent, AuthorCMS } from "../../../lib/authors";
 
 type Props = {
-	author: AuthorCMS;
+	author: AuthorContent;
 };
 
 const Author = ({ author }: Props) => {
@@ -27,7 +27,7 @@ const Author = ({ author }: Props) => {
 				<circle cx="16" cy="16" r="16" fill="#cccccc" />
 			</svg>
 			{/* FIXME */}
-			{/* <span style={styles.authorName}>{author.name}</span> */}
+			<span style={styles.authorName}>{author.name}</span>
 		</div>
 	);
 };

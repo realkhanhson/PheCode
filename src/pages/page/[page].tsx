@@ -6,7 +6,7 @@ import { countPosts, listPostContent, PostContent, PostCMS } from "../../lib/pos
 import { listTags, TagContent } from "../../lib/tags";
 
 type Props = {
-	posts: PostCMS[];
+	posts: PostContent[];
 	tags: TagContent[];
 	page: number;
 	pagination: {

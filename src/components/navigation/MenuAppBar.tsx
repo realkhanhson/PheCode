@@ -15,7 +15,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Avatar from "@material-ui/core/Avatar";
 import Slide from "@material-ui/core/Slide";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import CreatePost from "../post/CreatePost";
+import CreateIcon from "@material-ui/icons/Create";
 
 const MenuAppBar = () => {
 	const styles = {
@@ -74,7 +74,11 @@ const MenuAppBar = () => {
 
 					<div className="userContainer">
 						<div className="userBtns">
-							<CreatePost />
+							<Link href="/create">
+								<IconButton>
+									<CreateIcon />
+								</IconButton>
+							</Link>
 							<div className="iconButton">
 								<IconButton>
 									<Badge badgeContent={4} color="secondary">

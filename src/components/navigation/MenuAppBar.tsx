@@ -1,5 +1,16 @@
 import React from "react";
-import { Badge, InputBase, AppBar, Divider, InputAdornment, Menu, MenuItem, Link, IconButton } from "@material-ui/core";
+import {
+	Badge,
+	InputBase,
+	AppBar,
+	Divider,
+	InputAdornment,
+	Menu,
+	MenuItem,
+	Link,
+	IconButton,
+	Button,
+} from "@material-ui/core";
 import BookmarkBorderOutlinedIcon from "@material-ui/icons/BookmarkBorderOutlined";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import WhatshotOutlinedIcon from "@material-ui/icons/WhatshotOutlined";
@@ -49,7 +60,19 @@ const MenuAppBar = () => {
 							<img src="/images/logo.png" className="logoTab" />
 						</Link>
 						<div className="iconButton">
-							<IconButton>
+							<Button>
+								<BookmarkBorderOutlinedIcon />
+								<span className="tab-label">&nbsp;Saved</span>
+							</Button>
+							<Button>
+								<FavoriteBorderOutlinedIcon />
+								<span className="tab-label">&nbsp;For You</span>
+							</Button>
+							<Button>
+								<WhatshotOutlinedIcon />
+								<span className="tab-label">&nbsp;Trending</span>
+							</Button>
+							{/* <IconButton>
 								<BookmarkBorderOutlinedIcon />
 							</IconButton>
 							<IconButton>
@@ -57,7 +80,7 @@ const MenuAppBar = () => {
 							</IconButton>
 							<IconButton>
 								<WhatshotOutlinedIcon />
-							</IconButton>
+							</IconButton> */}
 						</div>
 					</div>
 
@@ -161,6 +184,7 @@ const MenuAppBar = () => {
 						}
 						.tabs {
 							display: flex;
+							flex: 1;
 							justify-content: left;
 							align-items: center;
 							margin-right: auto;
@@ -185,6 +209,7 @@ const MenuAppBar = () => {
 						}
 						.userContainer {
 							display: flex;
+							flex: 1;
 							justify-content: right;
 							align-items: center;
 							margin-left: auto;
@@ -210,6 +235,12 @@ const MenuAppBar = () => {
 						@media (min-width: 769px) {
 							.iconButton{ 
 								display: flex;
+							}
+						}
+						@media (max-width: 1100px) {
+							/* Tested on Firefox */
+							.tab-label {
+								display: none;
 							}
 						}
 					`}

@@ -217,6 +217,7 @@ const MenuAppBar = () => {
 							justify-content: right;
 							align-items: center;
 							margin-left: auto;
+							padding-left: 200px;
 						}
 						.userBtns {
 							display: flex;
@@ -246,6 +247,10 @@ const MenuAppBar = () => {
 							.tab-label {
 								display: none;
 							}
+							.userContainer {
+					
+							padding-left: 0px;
+						}
 						}
 					`}
 				</style>

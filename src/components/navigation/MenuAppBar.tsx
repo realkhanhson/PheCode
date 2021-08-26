@@ -188,7 +188,7 @@ const MenuAppBar = () => {
 						}
 						.tabs {
 							display: flex;
-							flex: 1;
+							/* flex: 1; */
 							justify-content: left;
 							align-items: center;
 							margin-right: auto;
@@ -213,7 +213,7 @@ const MenuAppBar = () => {
 						}
 						.userContainer {
 							display: flex;
-							flex: 1;
+							/* flex: 1; */
 							justify-content: right;
 							align-items: center;
 							margin-left: auto;

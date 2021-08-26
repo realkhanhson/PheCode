@@ -57,6 +57,12 @@ export default function Navigation() {
             padding: 1rem 1rem 1rem;
             list-style-type: none;
           }
+		  li:hover {
+			  background-color: rgba(255, 153, 0, 0.10);
+		  }
+		  li:active {
+		      background-color: rgba(255, 153, 0, 0.20);
+		  }
           li:last-child {
             margin-bottom: 0;
           }

@@ -8,14 +8,9 @@ export default function Navigation() {
 	const tags = listTags();
 	const [active, setActive] = useState(false);
 	return (
-		<>
+		<div className="container">
 			<div className={active ? "active" : ""}>
 				<ul>
-					<li>
-						<Link href="/">
-							<a className={router.pathname === "/" ? "active" : null}>All</a>
-						</Link>
-					</li>
 					{tags.map((tag, i) => (
 						<li key={i}>
 							<Link href={"/tags/[[...slug]]"} as={`/tags/${tag.slug}`}>
@@ -33,6 +28,7 @@ export default function Navigation() {
             display: flex:
             margin-left: auto;
             margin-right: auto;
+            padding-top: 10px;
           }
           ul {
             opacity: 0;
@@ -79,6 +75,6 @@ export default function Navigation() {
           }
         `}
 			</style>
-		</>
+		</div>
 	);
 }

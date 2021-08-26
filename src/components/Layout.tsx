@@ -4,6 +4,7 @@ import Copyright from "./navigation/Copyright";
 import { SocialList } from "./navigation/SocialList";
 import { Container } from "@material-ui/core";
 import MenuAppBar from "@components/navigation/MenuAppBar";
+import Navigation from "@components/navigation/Navigation";
 
 type Props = {
 	children: React.ReactNode;
@@ -13,6 +14,7 @@ export default function Layout({ children }: Props) {
 	return (
 		<>
 			<MenuAppBar />
+			<Navigation />
 			<Container maxWidth="lg">
 				<Header />
 			</Container>

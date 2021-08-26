@@ -3,7 +3,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const LinkedHeader = ({ title, href }) => {
 	const styleVars = {
-		textSize: "48px",
+		textSize: "36px",
 	};
 	const styles = {
 		container: {
@@ -16,7 +16,7 @@ const LinkedHeader = ({ title, href }) => {
 		},
 		link: {
 			fontSize: styleVars.textSize,
-			fontWeight: 800,
+			fontWeight: 700,
 			color: "#ff9900",
 		},
 		icon: {

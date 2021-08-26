@@ -17,7 +17,6 @@ const Author = ({ author }: Props) => {
 		authorName: {
 			fontSize: "20px",
 			fontWeight: 800,
-			height: "min-content",
 		},
 	};
 

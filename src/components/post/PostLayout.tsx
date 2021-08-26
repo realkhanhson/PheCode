@@ -41,7 +41,7 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 							) : (
 								<div></div>
 							)}
-							<Author author={author} />
+							<Author author={getAuthor(author)} />
 							<Date date={date} />
 						</div>
 					</header>
@@ -53,9 +53,9 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 			<style jsx>
 				{`
 					.container {
-						max-width: 43rem;
 						width: 100%;
 						margin: 0 auto;
+						max-width: 22rem;
 						box-sizing: border-box;
 						z-index: 0;
 					}
@@ -83,6 +83,7 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 						.container {
 							display: flex;
 							flex-direction: column;
+							max-width: 43rem;
 						}
 					}
 				`}

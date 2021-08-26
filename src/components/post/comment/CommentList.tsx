@@ -30,8 +30,7 @@ export default function CommentList() {
 				image="KS"
 				content={`
 					This is a false fact. Even when you enjoy it, sometimes it can get frustrating. Some people have
-					trouble focusing. And it has nothing to do with "what they enjoy". Sometimes when programming
-					stresses you out, you should take a break.
+					trouble focusing. 
 				`}
 			/>
 
@@ -48,9 +47,7 @@ export default function CommentList() {
 				image="NQ"
 				content={`
 					Thank you so much for sharing all this. I'm pretty sure that, I'll gain efficiency by following
-					the promodoro technique. I used to stay watching videos and taking note for about 3h every
-					night. And sometime, I wanted to give up because I felt like I was not really understanding, as
-					if I was just keeping a written version of what I was watching.
+					the promodoro technique..
 				`}
 			/>
 
@@ -59,11 +56,6 @@ export default function CommentList() {
 				image="LH"
 				content={`
 					This is honestly the beauty of the internet. 
-					I'm sure people pay good money to take courses 
-					that give you the same amount of information as this video. 
-					But in this case, there's a great, clear teacher, 
-					and you can pause and rewind as much as you need and its free! 
-					I'm really enjoying it.
 				`}
 			/>
 

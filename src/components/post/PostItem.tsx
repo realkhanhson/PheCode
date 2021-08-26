@@ -48,11 +48,14 @@ export default function PostItem({ post }: Props) {
 				<div style={styles.title}>{post.title}</div>
 
 				<Typography variant="body2" color="textSecondary" component="p">
-					<Date date={parseISO(post.date)} />
-					&nbsp;&nbsp;
 					<Author author={getAuthor(post.author)} />
+					<br />
+					<Date date={parseISO(post.date)} />
 				</Typography>
-
+				<div>
+					According to Wikipedia, “a software development process is the process of dividing software
+					development”.
+				</div>
 				<InfoBar likes={"69/72"} comments={"42"} time={"Dec 31"} />
 			</div>
 		</Link>

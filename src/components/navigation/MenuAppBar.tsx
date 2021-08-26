@@ -22,64 +22,8 @@ const MenuAppBar = () => {
 		appBarSpecifics: {
 			boxShadow: "none",
 			color: "#000000",
-			zIndex: 1030, // Magic number: exactly 1 less than the default z-index for nprogress
+			zIndex: 1030,
 		},
-		container: {
-			display: "flex",
-			flexFlow: "row",
-			backgroundColor: "#f8f8f8",
-			borderBottom: "1px solid #c0c0c0",
-			padding: "8px",
-			alignItems: "center",
-		},
-
-		tabs: {
-			display: "flex",
-			justifyContent: "left",
-			alignItems: "center",
-			flex: "1",
-			marginRight: "auto",
-		},
-		logoTab: {
-			display: "flex",
-			height: "32px",
-			margin: "0 calc((48px - 32px) / 2)",
-		},
-
-		searchBox: {
-			display: "flex",
-			justifyContent: "center",
-			flex: "2",
-			backgroundColor: "#e8e8e8",
-			borderRadius: "8px",
-			padding: "8px 16px",
-			color: "#808080",
-			width: "100%",
-		},
-		userContainer: {
-			display: "flex",
-			justifyContent: "right",
-			marginLeft: "150px",
-		},
-		userBtns: {
-			display: "flex",
-			flexFlow: "row",
-		},
-		userNameContainer: {
-			display: "flex",
-			flexFlow: "row",
-			alignItems: "center",
-			paddingLeft: "15px",
-		},
-		menuAvatar: {
-			display: "flex",
-			padding: "10px",
-		},
-		menuText: {
-			paddingLeft: "15px",
-			paddingTop: "5px",
-		},
-		userName: {},
 	};
 
 	const [auth, setAuth] = React.useState(true);
@@ -99,51 +43,55 @@ const MenuAppBar = () => {
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
 			<AppBar position="sticky" style={styles.appBarSpecifics}>
-				<div style={styles.container}>
-					<div style={styles.tabs}>
+				<div className="container">
+					<div className="tabs">
 						<Link href="/">
-							<img src="/images/logo.png" style={styles.logoTab} />
+							<img src="/images/logo.png" className="logoTab" />
 						</Link>
-						<IconButton>
-							<BookmarkBorderOutlinedIcon />
-						</IconButton>
-						<IconButton>
-							<FavoriteBorderOutlinedIcon />
-						</IconButton>
-						<IconButton>
-							<WhatshotOutlinedIcon />
-						</IconButton>
+						<div className="iconButton">
+							<IconButton>
+								<BookmarkBorderOutlinedIcon />
+							</IconButton>
+							<IconButton>
+								<FavoriteBorderOutlinedIcon />
+							</IconButton>
+							<IconButton>
+								<WhatshotOutlinedIcon />
+							</IconButton>
+						</div>
 					</div>
 
-					<InputBase
-						style={styles.searchBox}
-						placeholder="What are you looking for?"
-						startAdornment={
-							<InputAdornment position="start">
-								<SearchIcon />
-							</InputAdornment>
-						}
-					/>
+					<div className="searchBox">
+						<InputBase
+							placeholder="What are you looking for?"
+							startAdornment={
+								<InputAdornment position="start">
+									<SearchIcon />
+								</InputAdornment>
+							}
+						/>
+					</div>
 
-					<div style={styles.userContainer}>
-						<div style={styles.userBtns}>
+					<div className="userContainer">
+						<div className="userBtns">
 							<CreatePost />
-							<IconButton>
-								<Badge badgeContent={4} color="secondary">
-									<ForumOutlinedIcon />
-								</Badge>
-							</IconButton>
-							<IconButton>
-								<Badge badgeContent={8} color="secondary">
-									<NotificationsOutlinedIcon />
-								</Badge>
-							</IconButton>
+							<div className="iconButton">
+								<IconButton>
+									<Badge badgeContent={4} color="secondary">
+										<ForumOutlinedIcon />
+									</Badge>
+								</IconButton>
+								<IconButton>
+									<Badge badgeContent={8} color="secondary">
+										<NotificationsOutlinedIcon />
+									</Badge>
+								</IconButton>
+							</div>
 						</div>
 						<Divider orientation="vertical" flexItem />
 
 						{auth && (
-							<div style={styles.userNameContainer}>
-								<div style={styles.userName}>Undefined</div>
+							<div className="userNameContainer">
 								<IconButton
 									aria-label="account of current user"
 									aria-controls="menu-appbar"
@@ -167,37 +115,105 @@ const MenuAppBar = () => {
 									}}
 									open={open}
 									onClose={handleClose}>
-									<div style={styles.menuAvatar}>
-										<Avatar>UN</Avatar>
-										<div style={styles.menuText}>Undefined</div>
+									<div className="menuAvatar">
+										<Avatar>TM</Avatar>
+										<div className="menuText">Tommy</div>
 									</div>
 									<Divider />
 									<MenuItem onClick={handleClose}>
 										<PersonIcon />
-										<div style={styles.menuText}>Profile</div>
+										<div className="menuText">Profile</div>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
 										<DescriptionIcon />
-										<div style={styles.menuText}>Post Management</div>
+										<div className="menuText">Post Management</div>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
 										<HistoryIcon />
-										<div style={styles.menuText}>History</div>
+										<div className="menuText">History</div>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
 										<SettingsIcon />
-										<div style={styles.menuText}>Settings</div>
+										<div className="menuText">Settings</div>
 									</MenuItem>
 									<Divider />
 									<MenuItem onClick={handleClose}>
 										<ExitToAppIcon />
-										<div style={styles.menuText}>Sign Out</div>
+										<div className="menuText">Sign Out</div>
 									</MenuItem>
 								</Menu>
 							</div>
 						)}
 					</div>
 				</div>
+				<style jsx>
+					{`
+						.container {
+							display: flex;
+							flex-flow: row;
+							background-color: #f8f8f8;
+							border-bottom: 1px solid #c0c0c0;
+							padding: 8px;
+							align-items: center;
+						}
+						.iconButton{
+							display: none;
+						}
+						.tabs {
+							display: flex;
+							justify-content: left;
+							align-items: center;
+							margin-right: auto;
+						}
+
+						.logoTab {
+							display: flex;
+							height: 32px;
+							margin: 0 calc((48px - 32px) / 2);
+						}
+						.searchBox{
+							display: flex
+							justify-content: center;
+							background-color: #e8e8e8;
+							border-radius: 8px;
+							padding: 8px 16px;
+							color: #808080;
+							max-width: 50rem;
+							margin-left: auto;
+							margin-right: auto;
+
+						}
+						.userContainer {
+							display: flex;
+							justify-content: right;
+							align-items: center;
+							margin-left: auto;
+						}
+						.userBtns {
+							display: flex;
+							flex-flow: row;
+						}
+						.userNameContainer {
+							display: flex;
+							flex-flow: row;
+							align-items: center;
+							padding-left: 15px;
+						}
+						.menuAvatar {
+							display: flex;
+							padding: 10px;
+						}
+						.menuText {
+							padding-left: 15px;
+							padding-top: 5px;
+						}
+						@media (min-width: 769px) {
+							.iconButton{ 
+								display: flex;
+							}
+						}
+					`}
+				</style>
 			</AppBar>
 		</Slide>
 	);

@@ -4,7 +4,7 @@ const HomeSection = ({ children }) => {
 			display: "flex",
 			flexFlow: "column",
 			gap: "32px",
-			margin: "48px 0",
+			margin: "48px auto 48px auto",
 		},
 	};
 

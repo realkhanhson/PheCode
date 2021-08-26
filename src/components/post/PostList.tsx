@@ -24,7 +24,7 @@ export default function PostList({ posts, tags, pagination, title }: Props) {
 			<Container maxWidth="lg">
 				<HomeSection>
 					<LinkedHeader title={title} href={"#"} />
-					<Grid container alignItems="stretch" spacing={4}>
+					<Grid container alignItems="stretch" spacing={6}>
 						{posts.map((it, i) => (
 							<Grid item key={i} xs={12} md={6} lg={6}>
 								<PostItem post={it} />

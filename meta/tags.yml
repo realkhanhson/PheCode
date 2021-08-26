@@ -9,8 +9,6 @@ tags:
       name: Netlify
     - slug: tailwindcss
       name: Tailwindcss
-    - slug: vercel
-      name: Vercel
     - slug: javascript
       name: JavaScript
     - slug: python

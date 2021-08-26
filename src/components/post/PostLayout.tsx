@@ -65,6 +65,7 @@ export default function PostLayout({ title, date, slug, author, tags, descriptio
 					}
 					article {
 						flex: 1 0 auto;
+						padding-bottom: 3rem; /* magic: who left 3rem <br> on article title? */
 					}
 					h1 {
 						margin: 0 0 0.5rem;

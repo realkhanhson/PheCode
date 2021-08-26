@@ -51,13 +51,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = listTags().flatMap((tag) => {
 		const pages = Math.ceil(countPosts(tag.slug) / config.posts_per_page);
 		return Array.from(Array(pages).keys()).map((page) =>
-			page === 0
-				? {
+			{
+				return page === 0
+					? {
 						params: { slug: [tag.slug] },
-				  }
-				: {
+					}
+					: {
 						params: { slug: [tag.slug, (page + 1).toString()] },
-				  }
+					};
+			}
 		);
 	});
 	return {

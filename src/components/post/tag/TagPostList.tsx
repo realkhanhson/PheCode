@@ -19,9 +19,9 @@ export default function TagPostList({ posts, tag, pagination }: Props) {
 		<>
 			<Container maxWidth="lg">
 				<h1>{tag.name}</h1>
-				<Grid container alignItems="stretch" spacing={5}>
+				<Grid container alignItems="stretch" spacing={6}>
 					{posts.map((it, i) => (
-						<Grid item key={i} xs={12} md={6} lg={4}>
+						<Grid item key={i} xs={12} md={6} lg={6}>
 							<PostItem post={it} />
 						</Grid>
 					))}

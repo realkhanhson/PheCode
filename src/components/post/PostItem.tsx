@@ -38,7 +38,9 @@ export default function PostItem({ post }: Props) {
 			textAlign: "justify" as const, // https://stackoverflow.com/a/63440317
 		},
 
-		infobar: {},
+		author: {
+			paddingTop: "20px",
+		},
 	};
 
 	return (
@@ -48,7 +50,9 @@ export default function PostItem({ post }: Props) {
 				<div style={styles.title}>{post.title}</div>
 
 				<Typography variant="body2" color="textSecondary" component="p">
-					<Author author={getAuthor(post.author)} />
+					<div style={styles.author}>
+						<Author author={getAuthor(post.author)} />
+					</div>
 					<br />
 					<Date date={parseISO(post.date)} />
 				</Typography>
